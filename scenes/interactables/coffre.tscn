@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl7wfokgly5b"]
+
+[sub_resource type="Animation" id="Animation_cdaex"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("top:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wpbje"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("top:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_30e27"]
+_data = {
+&"RESET": SubResource("Animation_cdaex"),
+&"open": SubResource("Animation_wpbje")
+}
+
+[node name="Coffre" type="Node3D"]
+
+[node name="box" type="CSGBox3D" parent="."]
+
+[node name="top" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.544, 0)
+size = Vector3(1, 0.0860596, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_30e27")
+}
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.425298, 0.358912, 2.88785e-07, 1)
+omni_range = 1.47949

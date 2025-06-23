@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Down Serveur"
+run/main_scene="uid://cgcx61iqon7an"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://scripts/GlobalsScripts/Globals.gd"
+Utils="*res://scripts/GlobalsScripts/Utils.gd"
+PlayerUtils="*res://scripts/GlobalsScripts/PlayerUtils.gd"
+Items="*res://scripts/GlobalsScripts/GlobalsItems.gd"
+GameRules="*res://scripts/GlobalsScripts/GameRules.gd"
+
+[layer_names]
+
+3d_physics/layer_1="Main"
+3d_physics/layer_10="Bullet and Projectil for Player"
