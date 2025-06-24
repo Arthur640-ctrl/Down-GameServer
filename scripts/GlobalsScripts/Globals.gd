@@ -43,6 +43,10 @@ var player_bars = {
 	}
 }
 
+var player_inventory = {
+	
+}
+
 var players_inventory = {
 	"player1": {
 		
